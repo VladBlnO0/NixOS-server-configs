@@ -28,7 +28,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Europe/Chisinau";
+  time.timeZone = "Europe/Kyiv";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -42,8 +42,8 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dellserver = {
     isNormalUser = true;
-    description = "dell-server";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    description = "dellserver";
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [];
   };
 
@@ -56,14 +56,14 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
 	vim
-	tmux
-	docker
-	docker-compose
-	git
-	bash
+tmux
+docker
+docker-compose
+git
+bash
   ];
 
-  virtualisation.docker.enable = true;
+virtualisation.docker.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -82,7 +82,7 @@
   networking.firewall.allowedTCPPorts = [ 80 443 22 3000 3306 4000];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  networking.firewall.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
